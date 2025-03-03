@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>My Gaming Portfolio</h1>
+        <h1 class="fade-in">My Gaming Portfolio</h1>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
@@ -19,20 +19,20 @@
         </nav>
     </header>
     
-    <section id="about">
+    <section id="about" class="slide-in">
         <h2>About Me</h2>
         <p>I'm a passionate gamer and developer, creating unique gaming experiences.</p>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="slide-in">
         <h2>My Games</h2>
-        <div class="project">
+        <div class="project hover-effect">
             <h3>Game Title</h3>
             <p>Description of the game.</p>
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="slide-in">
         <h2>Contact Me</h2>
         <p>Email: gamer@example.com</p>
     </section>
@@ -47,6 +47,7 @@
         background-color: #121212;
         color: white;
         text-align: center;
+        overflow-x: hidden;
     }
     header {
         background-color: #1f1f1f;
@@ -66,26 +67,48 @@
     }
     section {
         padding: 50px 20px;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
     }
     .project {
         background-color: #1f1f1f;
         padding: 20px;
         margin: 20px;
         border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+    .project:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+    }
+    .fade-in {
+        animation: fadeIn 2s ease-in;
+    }
+    .slide-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
 </style>
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const projects = document.querySelectorAll(".project");
-        projects.forEach(project => {
-            project.addEventListener("mouseover", () => {
-                project.style.transform = "scale(1.05)";
-                project.style.transition = "0.3s";
+        const sections = document.querySelectorAll("section");
+        const options = { threshold: 0.3 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("slide-in");
+                    observer.unobserve(entry.target);
+                }
             });
-            project.addEventListener("mouseout", () => {
-                project.style.transform = "scale(1)";
-            });
+        }, options);
+        sections.forEach(section => {
+            observer.observe(section);
         });
     });
 </script>
