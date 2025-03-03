@@ -1,91 +1,91 @@
-<html>
-    <head>
-        <style>
-            body, html {
-               height: 100%;
-               margin: 0;
-            }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>My Gaming Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm a passionate gamer and developer, creating unique gaming experiences.</p>
+    </section>
 
-            .bgimg {
-               background-image: url('https://www.proptecheurasia.com/upload/image/forestbridge.jpg');
-               height: 100%;
-               background-position: center;
-               background-size: cover;
-               position: relative;
-               color: white;
-               font-family: "Courier New", Courier, monospace;
-               font-size: 25px;
-            }
-
-            .topleft {
-               position: absolute;
-               top: 0;
-               left: 16px;
-            }
-
-            .bottomleft {
-               position: absolute;
-               bottom: 0;
-               left: 16px;
-            }
-
-            .middle {
-               position: absolute;
-               top: 50%;
-               left: 50%;
-               transform: translate(-50%, -50%);
-               text-align: center;
-            }
-
-            hr {
-               margin: auto;
-               width: 40%;
-            }
-        </style>
-        <script>
-            // Set the date we're counting down to
-            var countDownDate = new Date("Sep 1, 2024 00:00:00").getTime();
-
-            // Update the count down every 1 second
-            var x = setInterval(function() {
-
-            // Get todays date and time
-            var now = new Date().getTime();
-
-            // Find the distance between now an the count down date
-            var distance = countDownDate - now;
-
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Display the result in an element with id="demo"
-            document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ";
-
-            // If the count down is finished, write some text
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("demo").innerHTML = "EXPIRED";
-            }
-            }, 1000);
-        </script>
-    </head>
-    <body>
-        <div class="bgimg">
-            <div class="topleft">
-                <p>Nymur Reza</p>
-            </div>
-            <div class="middle">
-                <h1>COMING SOON</h1>
-                <hr>
-                <p id="demo" style="font-size:30px"></p>
-            </div>
-            <div class="bottomleft">
-                <p>Get ready for some awesome things you have never seen before!!</p>
-            </div>
+    <section id="projects">
+        <h2>My Games</h2>
+        <div class="project">
+            <h3>Game Title</h3>
+            <p>Description of the game.</p>
         </div>
-    </body>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: gamer@example.com</p>
+    </section>
+</body>
 </html>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #121212;
+        color: white;
+        text-align: center;
+    }
+    header {
+        background-color: #1f1f1f;
+        padding: 20px;
+    }
+    nav ul {
+        list-style: none;
+        padding: 0;
+    }
+    nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+    }
+    section {
+        padding: 50px 20px;
+    }
+    .project {
+        background-color: #1f1f1f;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const projects = document.querySelectorAll(".project");
+        projects.forEach(project => {
+            project.addEventListener("mouseover", () => {
+                project.style.transform = "scale(1.05)";
+                project.style.transition = "0.3s";
+            });
+            project.addEventListener("mouseout", () => {
+                project.style.transform = "scale(1)";
+            });
+        });
+    });
+</script>
