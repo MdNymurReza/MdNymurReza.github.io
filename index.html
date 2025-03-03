@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaming Portfolio</title>
+    <title>Gaming & Education Hub</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1 class="fade-in">My Gaming Portfolio</h1>
+        <h1 class="fade-in">My Gaming & Education Hub</h1>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
+                <li><a href="#courses">Courses</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -21,14 +22,63 @@
     
     <section id="about" class="slide-in">
         <h2>About Me</h2>
-        <p>I'm a passionate gamer and developer, creating unique gaming experiences.</p>
+        <img src="dummy-profile.jpg" alt="Profile Picture" class="profile-pic">
+        <p>I'm a passionate gamer, developer, and educator, creating unique gaming experiences and educational content.</p>
+        <h3>Skills</h3>
+        <div class="skill">
+            <p>Game Development (Unity, Unreal Engine)</p>
+            <div class="skill-bar">
+                <div class="skill-fill" style="width: 90%;"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <p>JavaScript, HTML, CSS</p>
+            <div class="skill-bar">
+                <div class="skill-fill" style="width: 85%;"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <p>Python & AI for Games</p>
+            <div class="skill-bar">
+                <div class="skill-fill" style="width: 80%;"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <p>3D Modeling & Animation</p>
+            <div class="skill-bar">
+                <div class="skill-fill" style="width: 75%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="slide-in">
+        <h2>Educational Courses</h2>
+        <div class="course">
+            <img src="course1.png" alt="Course 1 Logo" class="course-logo">
+            <h3>Game Development Basics</h3>
+            <p>Learn the fundamentals of game development, including game design, coding, and publishing.</p>
+        </div>
+        <div class="course">
+            <img src="course2.png" alt="Course 2 Logo" class="course-logo">
+            <h3>JavaScript for Gamers</h3>
+            <p>Master JavaScript and use it to build interactive web-based games.</p>
+        </div>
+        <div class="course">
+            <img src="course3.png" alt="Course 3 Logo" class="course-logo">
+            <h3>Advanced Unity 3D</h3>
+            <p>Take your Unity skills to the next level with advanced game mechanics and graphics.</p>
+        </div>
     </section>
 
     <section id="projects" class="slide-in">
         <h2>My Games</h2>
         <div class="project hover-effect">
-            <h3>Game Title</h3>
-            <p>Description of the game.</p>
+            <h3>CyberQuest</h3>
+            <p>A futuristic RPG where you battle AI-driven enemies and explore a digital universe.</p>
+        </div>
+        <div class="project hover-effect">
+            <h3>Pixel Racer</h3>
+            <p>An 8-bit style racing game with intense speed and strategy.</p>
         </div>
     </section>
 
@@ -71,14 +121,38 @@
         transform: translateY(50px);
         transition: opacity 1s ease-out, transform 1s ease-out;
     }
-    .project {
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-top: 10px;
+    }
+    .skill {
+        margin: 10px 0;
+    }
+    .skill-bar {
+        width: 80%;
+        background: #333;
+        border-radius: 10px;
+        height: 20px;
+        margin: 5px auto;
+        position: relative;
+    }
+    .skill-fill {
+        height: 100%;
+        background: #4CAF50;
+        border-radius: 10px;
+    }
+    .project, .course {
         background-color: #1f1f1f;
         padding: 20px;
         margin: 20px;
         border-radius: 10px;
         transition: transform 0.3s ease-in-out;
+        display: inline-block;
+        width: 250px;
     }
-    .project:hover {
+    .project:hover, .course:hover {
         transform: scale(1.1);
         box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
     }
@@ -88,6 +162,11 @@
     .slide-in {
         opacity: 1;
         transform: translateY(0);
+    }
+    .course-logo {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
     }
     @keyframes fadeIn {
         from { opacity: 0; }
