@@ -1,40 +1,42 @@
-# Personal Portfolio Website
+# MD Nymur Reza | Portfolio
 
-This repository contains the source code and files for my personal portfolio website. The website is built using HTML, CSS, and JavaScript.
-
-## Description
-
-The personal portfolio website showcases my skills, projects, and experiences as a web developer. It serves as an online platform to highlight my work and provide information about my background and expertise.
+This is a modern, professional developer portfolio built with HTML, Tailwind CSS, and Vanilla JavaScript.
 
 ## Features
 
-- Home: Introduces myself and provides a brief overview of my skills and interests.
-- About: Details my professional background, education, and relevant experience.
-- Projects: Showcases the projects I have worked on, including descriptions, screenshots, and links to live demos or repositories.
-- Skills: Lists the programming languages, frameworks, and tools I am proficient in.
-- Contact: Offers various ways to get in touch with me, such as through email, social media, or a contact form.
+- **Glassmorphism Design**: Modern and clean aesthetic.
+- **Dark/Light Mode**: Persists user preference.
+- **Responsive**: Mobile-first approach.
+- **Animations**: Smooth scroll reveal (AOS) and typing effects (Typed.js).
+- **Project Filtering**: Browse projects by category.
+- **GitHub Integration**: Real-time stats and language breakdown.
+- **Contact Form**: Integrated with EmailJS (serverless).
+- **SEO Optimized**: Meta tags for better search visibility.
+- **Visitor Counter**: Real-time profile hits.
 
-## Technologies Used
+## Deployment to GitHub Pages
 
-- HTML: Markup language used for structuring the website.
-- CSS: Stylesheet language used for designing and formatting the website.
-- JavaScript: Programming language used for adding interactivity and dynamic features.
+1. **Create a Repository**: Create a new repository on GitHub (e.g., `MdNymurReza.github.io`).
+2. **Upload Files**: Upload `index.html`, `CNAME`, and the `src/` folder.
+3. **Settings**:
+   - Go to **Settings** > **Pages**.
+   - Select the `main` branch as the source.
+   - Click **Save**.
+4. **Custom Domain**:
+   - If you have a custom domain (`nymurreza.com`), ensure the `CNAME` file is present in the root.
+   - Update your DNS settings (A records and CNAME) to point to GitHub's servers.
 
-## Getting Started
+## EmailJS Setup
 
-To view the website locally or make modifications, follow these steps:
+To make the contact form functional:
+1. Sign up at [emailjs.com](https://www.emailjs.com/).
+2. Create an Email Service and a Template.
+3. In `src/script.js`, replace `"YOUR_PUBLIC_KEY"` with your actual Public Key.
+4. Update the `emailjs.sendForm` call with your `SERVICE_ID` and `TEMPLATE_ID`.
 
-1. Clone the repository: `git clone [repository URL]`
-2. Open the project folder in your preferred code editor.
-3. Open the `index.html` file in a web browser to view the website.
+## Credits
 
-## Contributing
-
-I appreciate any suggestions, feedback, or contributions to enhance this personal portfolio website. If you would like to contribute, please follow the guidelines in the `CONTRIBUTING.md` file.
-
-## Contact
-
-If you have any questions or inquiries, please feel free to reach out to me through the contact information provided in the website or by using the contact form.
-
-Thank you for visiting my personal portfolio repository! I hope you find it informative and visually appealing.
-![Portfolio](https://github.com/MdNymurReza/MdNymurReza.github.io)
+- Icons: [Lucide](https://lucide.dev/)
+- Animations: [AOS](https://michalsnik.github.io/aos/)
+- Typing Effect: [Typed.js](https://mattboldt.com/demos/typed-js/)
+- Styling: [Tailwind CSS](https://tailwindcss.com/)
